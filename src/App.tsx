@@ -566,7 +566,7 @@ export default function Home() {
               <span className="step-number">01</span>
               <h2>内容怎样进入系统</h2>
             </div>
-            <span className="live-pill"><i /> 40条内容</span>
+            <span className="live-pill"><i /> 100条内容</span>
           </div>
 
           <div
