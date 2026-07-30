@@ -133,9 +133,9 @@ const initialEvidence: InterestMap = {
 
 const stageCopy = [
   ["开放视野", "五类内容都有机会被看见"],
-  ["玻璃萌芽", "重复选择正在留下第一道边界"],
-  ["视野收拢", "同类内容聚集，其他主题被推远"],
-  ["信息茧房", "玻璃闭合，单一主题占据主要视野"],
+  ["玻璃出现", "重复选择正在留下第一道边界"],
+  ["视野收窄", "同类内容聚在一起，其他主题被推远"],
+  ["信息茧房", "玻璃闭合，单一主题占主要视野"],
 ] as const;
 
 const behaviorRules: Record<
@@ -144,8 +144,8 @@ const behaviorRules: Record<
 > = {
   like: { amount: 3, label: "喜欢", evidence: 1 },
   stay: { amount: 1, label: "继续观看", evidence: 0.5 },
-  next: { amount: -1, label: "普通切换", evidence: -0.25 },
-  reject: { amount: -4, label: "1秒快速划走", evidence: -1.5 },
+  next: { amount: -1, label: "看下一条", evidence: -0.25 },
+  reject: { amount: -4, label: "快速划走", evidence: -1.5 },
 };
 
 function scoreCard(
@@ -548,8 +548,8 @@ export default function Home() {
           </span>
         </a>
         <div className="headline">
-          <span className="eyebrow">AI 通识 · 交互式数字资源</span>
-          <h1>看见每一次选择，如何编织你看到的世界</h1>
+          <span className="eyebrow">AI 入门 · 互动实验</span>
+          <h1>看看你的每一次选择，怎样慢慢改变你看到的世界</h1>
         </div>
         <div className="top-actions">
           <span className="simulation-badge">教学用简化模拟</span>
@@ -564,7 +564,7 @@ export default function Home() {
           <div className="panel-heading">
             <div>
               <span className="step-number">01</span>
-              <h2>内容怎样进入系统</h2>
+              <h2>内容是怎么进来的</h2>
             </div>
             <span className="live-pill"><i /> 100条内容</span>
           </div>
@@ -649,14 +649,14 @@ export default function Home() {
             <button className="choice-button like" onClick={() => applySignal("like")}>
               <span>♥</span>
               <strong>喜欢</strong>
-              <small>强兴趣 +3</small>
+              <small>很感兴趣 +3</small>
             </button>
           </div>
 
           <div className="tag-weight-card">
             <div className="tag-weight-title">
               <span>实验一｜预设内容标签</span>
-              <small>这些权重会真的参与计算</small>
+              <small>这些内容会真的参与计算</small>
             </div>
             {currentTagWeights.map(({ tag, weight }) => (
               <div className="tag-weight-row" key={tag}>
@@ -673,7 +673,7 @@ export default function Home() {
           <div className="panel-heading">
             <div>
               <span className="step-number">02</span>
-              <h2>看见茧房被逐次编织</h2>
+              <h2>看看茧房怎样一步步形成</h2>
             </div>
             <span className={`stage-badge level-${cocoonLevel}`}>
               {stageCopy[cocoonLevel][0]} · {Math.round(cocoonProgress)}%
@@ -788,10 +788,10 @@ export default function Home() {
           <div className="recommendation-flow">
             <div className="flow-head">
               <div>
-                <span>重新计算后的推荐流</span>
-                <small>个性化内容为主，同时保留少量探索位置</small>
+                <span>重新排序后的推荐列表</span>
+                <small>主要推你喜欢的，偶尔也放一点别的内容</small>
               </div>
-              <span className="flow-arrow">画像 + 标签 + 探索分 → 排序</span>
+              <span className="flow-arrow">你的喜好 + 内容标签 + 探索机会 → 排序</span>
             </div>
             <div className="mini-card-row six-cards">
               {recommendationQueue.map((item, rank) => (
@@ -904,12 +904,12 @@ export default function Home() {
               <button onClick={explore}>
                 <span>↗</span>
                 探索新主题
-                <small>增加陌生内容曝光</small>
+                <small>增加陌生内容出现机会</small>
               </button>
               <button onClick={() => setShowManage(true)}>
                 <span>⌘</span>
                 管理偏好
-                <small>直接修改推荐画像</small>
+                <small>直接修改你的喜好账本</small>
               </button>
             </div>
             {challengeComplete && (
@@ -993,9 +993,9 @@ export default function Home() {
         <div className="guide-backdrop" role="dialog" aria-modal="true" aria-label="管理推荐偏好">
           <div className="manage-card">
             <button className="guide-close" onClick={() => setShowManage(false)} aria-label="关闭偏好管理">×</button>
-            <span className="guide-kicker">主动干预算法</span>
+            <span className="guide-kicker">主动调整算法</span>
             <h2>管理我的推荐偏好</h2>
-            <p>这不是删除真实账号数据，而是模拟用户主动告诉系统“少推荐一些”。</p>
+            <p>这不是删除真实账号数据，而是模拟”主动告诉系统少推荐某些内容”。</p>
             <div className="manage-list">
               {themes.map((theme) => {
                 const blocked = blockedThemes.includes(theme.key);
@@ -1027,7 +1027,7 @@ export default function Home() {
             <div className="answer-list">
               {[
                 ["A", "因为平台里的其他内容突然消失了"],
-                ["B", "因为连续行为加强了兴趣画像，新的推荐又继续强化这种行为"],
+                ["B", "因为连续行为加强了你的喜好账本，新的推荐又继续强化这种行为"],
                 ["C", "因为每条视频的标签都完全相同"],
               ].map(([key, text]) => (
                 <button
