@@ -79,14 +79,14 @@ button {
 }
 
 .brand strong {
-  font-size: 22px;
+  font-size: 28px;
   letter-spacing: 0.12em;
   line-height: 1.05;
 }
 
 .brand small {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 15px;
   margin-top: 4px;
 }
 
@@ -97,7 +97,7 @@ button {
 .headline .eyebrow {
   color: var(--mint-dark);
   display: block;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.18em;
   margin-bottom: 2px;
@@ -105,7 +105,7 @@ button {
 
 .headline h1 {
   font-family: "Songti SC", "STSong", serif;
-  font-size: clamp(20px, 1.8vw, 31px);
+  font-size: clamp(26px, 2vw, 38px);
   letter-spacing: 0.025em;
   line-height: 1.25;
   margin: 0;
@@ -123,7 +123,7 @@ button {
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 8px 12px;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
 }
 
@@ -181,7 +181,7 @@ button {
 }
 
 .panel-heading h2 {
-  font-size: 17px;
+  font-size: 22px;
   letter-spacing: .02em;
   margin: 0;
 }
@@ -194,7 +194,7 @@ button {
   border-radius: 9px;
   color: white;
   background: var(--ink);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 900;
 }
 
@@ -205,7 +205,7 @@ button {
   gap: 6px;
   border-radius: 999px;
   padding: 6px 9px;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -285,7 +285,7 @@ button {
 .poster-symbol {
   color: rgba(255, 255, 255, 0.92);
   font-family: Georgia, serif;
-  font-size: clamp(90px, 10vw, 160px);
+  font-size: clamp(110px, 12vw, 180px);
   line-height: 1;
   text-shadow: 0 16px 30px rgba(28, 33, 49, 0.2);
   animation: breathe 3.4s ease-in-out infinite;
@@ -336,7 +336,7 @@ button {
   border-radius: 999px;
   background: rgba(16, 46, 44, 0.34);
   backdrop-filter: blur(10px);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -350,19 +350,19 @@ button {
 
 .video-copy .creator {
   color: #d9f7e9;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 800;
 }
 
 .video-copy h3 {
   font-family: "Songti SC", serif;
-  font-size: 24px;
+  font-size: 30px;
   margin: 6px 0 3px;
 }
 
 .video-copy p {
   color: rgba(255,255,255,.78);
-  font-size: 11px;
+  font-size: 15px;
   margin: 0;
 }
 
@@ -371,12 +371,12 @@ button {
   bottom: 13px;
   left: 16px;
   color: rgba(255,255,255,.77);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
 }
 
 .swipe-hint span {
-  font-size: 16px;
+  font-size: 21px;
   vertical-align: -1px;
   margin-right: 5px;
 }
@@ -408,7 +408,7 @@ button {
   margin: 0 auto 5px;
   border: 2px solid white;
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 26px;
   line-height: 1;
 }
 
@@ -418,12 +418,12 @@ button {
 }
 
 .swipe-feedback strong {
-  font-size: 12px;
+  font-size: 21px;
 }
 
 .swipe-feedback small {
   color: rgba(255,255,255,.76);
-  font-size: 7px;
+  font-size: 9px;
   margin-top: 3px;
 }
 
@@ -458,18 +458,18 @@ button {
   place-items: center;
   border-radius: 9px;
   background: #edf1ec;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .choice-button strong {
   white-space: nowrap;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .choice-button small {
   color: var(--muted);
   white-space: nowrap;
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .choice-button:hover {
@@ -517,12 +517,12 @@ button {
 
 .signal-strip small {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
   margin-bottom: 2px;
 }
 
 .signal-strip strong {
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.35;
 }
 
@@ -561,13 +561,13 @@ button {
 
 .garden-caption span {
   font-family: "Songti SC", serif;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 900;
 }
 
 .garden-caption p {
   color: #54766d;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 700;
   margin: 3px 0;
 }
@@ -785,7 +785,7 @@ button {
   padding: 4px 7px;
   border-radius: 999px;
   background: rgba(255,255,255,.75);
-  font-size: 8px;
+  font-size: 11px;
   transform: translateX(-50%);
 }
 
@@ -831,7 +831,7 @@ button {
   border: 3px solid rgba(255,255,255,.5);
   border-radius: 50%;
   background: var(--yellow);
-  font-size: 11px;
+  font-size: 15px;
   transform: translate(-50%, -50%);
 }
 
@@ -882,7 +882,7 @@ button {
   left: 50%;
   top: -70px;
   color: #4da4df;
-  font-size: 13px;
+  font-size: 17px;
   animation: water 0.8s cubic-bezier(.5,0,.8,.3) forwards;
 }
 
@@ -930,7 +930,7 @@ button {
 .meter-label {
   display: flex;
   justify-content: space-between;
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
   margin-bottom: 5px;
 }
@@ -971,18 +971,18 @@ button {
 }
 
 .flow-head span {
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 900;
 }
 
 .flow-head small {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .flow-head .flow-arrow {
   color: var(--mint-dark);
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .mini-card-row {
@@ -1014,7 +1014,7 @@ button {
   place-items: center;
   color: white;
   border-radius: 7px;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .mini-card > span:last-child {
@@ -1030,20 +1030,20 @@ button {
 
 .mini-card small {
   color: var(--muted);
-  font-size: 6px;
+  font-size: 8px;
 }
 
 .mini-card strong {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 8px;
+  font-size: 11px;
   margin: 2px 0;
 }
 
 .mini-card em {
   color: var(--mint-dark);
-  font-size: 7px;
+  font-size: 9px;
   font-style: normal;
 }
 
@@ -1096,11 +1096,11 @@ button {
 
 .why-title small {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .why-title strong {
-  font-size: 11px;
+  font-size: 15px;
   margin-top: 2px;
 }
 
@@ -1119,13 +1119,13 @@ button {
   border-radius: 7px;
   color: var(--mint-dark);
   background: var(--mint-soft);
-  font-size: 7px;
+  font-size: 9px;
   font-weight: 900;
 }
 
 .logic-chain i {
   color: #92a9a2;
-  font-size: 9px;
+  font-size: 12px;
   font-style: normal;
 }
 
@@ -1133,7 +1133,7 @@ button {
 .challenge-card p,
 .diversity-card p {
   color: var(--muted);
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.55;
   margin: 0;
 }
@@ -1150,13 +1150,13 @@ button {
 }
 
 .card-title span {
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 900;
 }
 
 .card-title small {
   color: var(--muted);
-  font-size: 7px;
+  font-size: 9px;
 }
 
 .profile-bars {
@@ -1175,7 +1175,7 @@ button {
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
 }
 
@@ -1200,7 +1200,7 @@ button {
 }
 
 .profile-row strong {
-  font-size: 8px;
+  font-size: 11px;
   text-align: right;
 }
 
@@ -1241,13 +1241,13 @@ button {
 }
 
 .diversity-ring strong {
-  font-size: 20px;
+  font-size: 26px;
   line-height: 1;
 }
 
 .diversity-ring small {
   color: var(--muted);
-  font-size: 7px;
+  font-size: 9px;
   margin-top: 3px;
 }
 
@@ -1258,11 +1258,11 @@ button {
 
 .diversity-card > div:last-child > span {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .diversity-card > div:last-child > strong {
-  font-size: 13px;
+  font-size: 17px;
   margin: 3px 0;
 }
 
@@ -1291,14 +1291,14 @@ button {
 
 .challenge-label {
   color: #fde5a5;
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 900;
   letter-spacing: .12em;
 }
 
 .challenge-card h3 {
   font-family: "Songti SC", serif;
-  font-size: 16px;
+  font-size: 21px;
   margin: 5px 0 4px;
 }
 
@@ -1324,7 +1324,7 @@ button {
   border-radius: 10px;
   background: #f4c65d;
   color: #22453c;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 900;
   transition: .2s ease;
 }
@@ -1345,14 +1345,14 @@ button {
 }
 
 .challenge-card button small {
-  font-size: 7px;
+  font-size: 9px;
   font-weight: 600;
   opacity: .7;
 }
 
 .model-note {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
   line-height: 1.5;
   margin: auto 2px 0;
 }
@@ -1382,7 +1382,7 @@ button {
   align-items: center;
   gap: 5px;
   color: #9aaaa5;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
   transition: color .3s ease;
 }
@@ -1394,7 +1394,7 @@ button {
   place-items: center;
   border-radius: 50%;
   background: #edf0eb;
-  font-size: 8px;
+  font-size: 11px;
   font-style: normal;
 }
 
@@ -1418,7 +1418,7 @@ button {
   align-items: center;
   gap: 11px;
   color: var(--muted);
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .bottom-actions button {
@@ -1427,7 +1427,7 @@ button {
   border: 1px solid var(--border);
   border-radius: 9px;
   background: white;
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 800;
 }
 
@@ -1465,12 +1465,12 @@ button {
   border: 0;
   border-radius: 50%;
   background: #e8eee7;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .guide-kicker {
   color: var(--mint-dark);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 900;
   letter-spacing: .15em;
 }
@@ -1478,7 +1478,7 @@ button {
 .guide-card h2 {
   max-width: 550px;
   font-family: "Songti SC", serif;
-  font-size: 28px;
+  font-size: 34px;
   line-height: 1.3;
   margin: 9px 0 22px;
 }
@@ -1506,18 +1506,18 @@ button {
   border-radius: 9px;
   color: white;
   background: var(--ink);
-  font-size: 10px;
+  font-size: 14px;
   font-style: normal;
 }
 
 .guide-steps strong {
   display: block;
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .guide-steps p {
   color: var(--muted);
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.6;
   margin: 5px 0 0;
 }
@@ -1534,7 +1534,7 @@ button {
   border: 0;
   border-radius: 12px;
   background: var(--mint-dark);
-  font-size: 12px;
+  font-size: 21px;
   font-weight: 900;
   transition: .2s ease;
 }
@@ -1548,7 +1548,7 @@ button {
   color: var(--muted);
   display: block;
   text-align: center;
-  font-size: 8px;
+  font-size: 11px;
   margin-top: 10px;
 }
 
@@ -1616,7 +1616,7 @@ button {
   .app-shell { padding: 0; }
   .topbar { min-height: auto; margin-bottom: 6px; padding: 6px 8px; }
   .brand-mark { width: 38px; height: 38px; }
-  .headline h1 { font-size: 21px; }
+  .headline h1 { font-size: 27px; }
   .lab-grid { display: block; padding: 0 4px; }
   .panel { margin-bottom: 6px; }
   .video-card { max-height: none; }
@@ -1625,10 +1625,10 @@ button {
   .bottom-bar { align-items: flex-start; gap: 10px; flex-direction: column; padding: 10px; margin: 6px 4px 0; }
   .lesson-route { width: 100%; justify-content: space-between; gap: 2px; }
   .lesson-route b { width: 8px; }
-  .lesson-route span { font-size: 7px; }
+  .lesson-route span { font-size: 9px; }
   .bottom-actions { width: 100%; justify-content: flex-end; }
   .guide-card { padding: 24px 16px 18px; }
-  .guide-card h2 { font-size: 23px; padding-right: 25px; }
+  .guide-card h2 { font-size: 29px; padding-right: 25px; }
   .guide-steps { grid-template-columns: repeat(2, 1fr); }
   .guide-steps > div { min-height: 116px; }
   .guide-steps i { margin-bottom: 8px; }
@@ -1659,19 +1659,19 @@ button {
 }
 
 .panel-heading h2 {
-  font-size: 19px;
+  font-size: 24px;
 }
 
 .step-number {
   width: 31px;
   height: 31px;
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .live-pill,
 .stage-badge {
   padding: 7px 10px;
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .video-card {
@@ -1681,25 +1681,25 @@ button {
 
 .tag-row span {
   padding: 7px 10px;
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .video-copy .creator {
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .video-copy h3 {
-  font-size: 27px;
+  font-size: 33px;
 }
 
 .video-copy p {
   max-width: 92%;
-  font-size: 13px;
+  font-size: 17px;
   line-height: 1.5;
 }
 
 .swipe-hint {
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .choice-grid.four-actions {
@@ -1716,15 +1716,15 @@ button {
 .choice-button > span {
   width: 32px;
   height: 32px;
-  font-size: 16px;
+  font-size: 21px;
 }
 
 .choice-button strong {
-  font-size: 12px;
+  font-size: 21px;
 }
 
 .choice-button small {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .choice-button.next > span {
@@ -1753,13 +1753,13 @@ button {
 }
 
 .tag-weight-title span {
-  font-size: 12px;
+  font-size: 21px;
   font-weight: 900;
 }
 
 .tag-weight-title small {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .tag-weight-row {
@@ -1772,7 +1772,7 @@ button {
 
 .tag-weight-row > span,
 .tag-weight-row > strong {
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .tag-weight-row > div {
@@ -1791,13 +1791,13 @@ button {
 
 .tag-weight-card > p {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 15px;
   line-height: 1.55;
   margin: 9px 0 0;
 }
 
 .garden-caption p {
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .glass-level-1 .glass-left,
@@ -1944,26 +1944,26 @@ button {
 }
 
 .meter-label {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .cocoon-meter > small {
   color: var(--muted);
   display: block;
-  font-size: 9px;
+  font-size: 12px;
   margin-top: 5px;
 }
 
 .flow-head span {
-  font-size: 12px;
+  font-size: 21px;
 }
 
 .flow-head small {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .flow-head .flow-arrow {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .mini-card-row.six-cards {
@@ -1976,15 +1976,15 @@ button {
 }
 
 .mini-card small {
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .mini-card strong {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .mini-card em {
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .explain-panel {
@@ -1992,31 +1992,31 @@ button {
 }
 
 .why-title small {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .why-title strong {
-  font-size: 13px;
+  font-size: 17px;
   line-height: 1.48;
 }
 
 .logic-chain span {
   padding: 8px 4px;
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .why-card > p,
 .challenge-card p,
 .diversity-card p {
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .card-title span {
-  font-size: 12px;
+  font-size: 21px;
 }
 
 .card-title small {
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .profile-row {
@@ -2026,7 +2026,7 @@ button {
 
 .profile-name,
 .profile-row strong {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .bar-track {
@@ -2048,16 +2048,16 @@ button {
 }
 
 .diversity-ring strong {
-  font-size: 22px;
+  font-size: 28px;
 }
 
 .diversity-ring small,
 .diversity-card > div:last-child > span {
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .diversity-card > div:last-child > strong {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .challenge-card h3 {
@@ -2065,7 +2065,7 @@ button {
 }
 
 .challenge-label {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .challenge-actions {
@@ -2093,7 +2093,7 @@ button {
 }
 
 .model-note {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .experiment-narrator {
@@ -2130,7 +2130,7 @@ button {
   border-radius: 13px;
   color: #285047;
   background: var(--yellow);
-  font-size: 19px;
+  font-size: 24px;
 }
 
 .narrator-main small,
@@ -2141,19 +2141,19 @@ button {
 
 .narrator-main small {
   color: #fbe3a3;
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: .04em;
 }
 
 .narrator-main strong {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.5;
   margin: 3px 0;
 }
 
 .narrator-main p {
   color: rgba(255,255,255,.68);
-  font-size: 11px;
+  font-size: 15px;
   margin: 0;
 }
 
@@ -2177,7 +2177,7 @@ button {
   display: grid;
   place-items: center;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 21px;
 }
 
 .log-item > span {
@@ -2186,7 +2186,7 @@ button {
   color: var(--mint-dark);
   border-radius: 999px;
   background: var(--mint-soft);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 900;
 }
 
@@ -2196,38 +2196,38 @@ button {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   min-height: 35px;
-  font-size: 11px;
+  font-size: 15px;
   line-height: 1.55;
   margin: 7px 0 4px;
 }
 
 .log-item small {
   color: var(--muted);
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .lesson-route span {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .bottom-actions {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 .guide-intro,
 .manage-card > p {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 17px;
   line-height: 1.7;
   margin: -10px 0 20px;
 }
 
 .guide-steps strong {
-  font-size: 13px;
+  font-size: 17px;
 }
 
 .guide-steps p {
-  font-size: 11px;
+  font-size: 15px;
 }
 
 .manage-card,
@@ -2246,7 +2246,7 @@ button {
 .manage-card h2,
 .reflection-card h2 {
   font-family: "Songti SC", serif;
-  font-size: 27px;
+  font-size: 33px;
   line-height: 1.35;
   margin: 8px 0 20px;
 }
@@ -2281,12 +2281,12 @@ button {
 }
 
 .manage-list strong {
-  font-size: 13px;
+  font-size: 17px;
 }
 
 .manage-list small {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 14px;
   margin-top: 3px;
 }
 
@@ -2297,7 +2297,7 @@ button {
   border-radius: 9px;
   color: #a24d3e;
   background: #fff0ec;
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 800;
 }
 
@@ -2323,7 +2323,7 @@ button {
   border: 1px solid var(--border);
   border-radius: 12px;
   background: white;
-  font-size: 13px;
+  font-size: 17px;
   transition: .2s ease;
 }
 
@@ -2358,11 +2358,11 @@ button {
 }
 
 .answer-feedback strong {
-  font-size: 13px;
+  font-size: 17px;
 }
 
 .answer-feedback p {
-  font-size: 12px;
+  font-size: 21px;
   line-height: 1.6;
   margin: 5px 0 0;
 }
