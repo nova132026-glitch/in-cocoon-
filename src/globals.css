@@ -11,6 +11,7 @@
   --coral: #ff806b;
   --border: rgba(41, 86, 76, 0.14);
   --shadow: 0 18px 45px rgba(37, 82, 69, 0.09);
+  --u: calc(100vw / 1440);
 }
 
 html {
@@ -38,8 +39,7 @@ button {
 
 .app-shell {
   min-height: 100vh;
-  padding: 14px 18px 12px;
-  overflow-x: hidden;
+  padding: 0;
 }
 
 .topbar {
@@ -48,8 +48,7 @@ button {
   grid-template-columns: minmax(245px, 1fr) 2fr minmax(245px, 1fr);
   align-items: center;
   gap: 20px;
-  max-width: 1720px;
-  margin: 0 auto 12px;
+  padding: 8px 14px;
 }
 
 .brand {
@@ -145,12 +144,11 @@ button {
 }
 
 .lab-grid {
-  max-width: 1720px;
-  min-height: calc(100vh - 168px);
-  margin: 0 auto;
+  min-height: calc(100vh - 90px);
   display: grid;
-  grid-template-columns: minmax(330px, 0.92fr) minmax(520px, 1.38fr) minmax(320px, 0.82fr);
-  gap: 12px;
+  grid-template-columns: minmax(320px, 0.95fr) minmax(500px, 1.4fr) minmax(300px, 0.85fr);
+  gap: 10px;
+  padding: 0 10px;
 }
 
 .panel {
@@ -1360,15 +1358,14 @@ button {
 }
 
 .bottom-bar {
-  max-width: 1720px;
-  min-height: 54px;
-  margin: 10px auto 0;
+  min-height: 48px;
+  margin: 8px 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 17px;
+  padding: 0 14px;
   border: 1px solid rgba(255,255,255,.7);
-  border-radius: 17px;
+  border-radius: 14px;
   background: rgba(255,255,252,.76);
   box-shadow: 0 10px 30px rgba(42,81,72,.06);
   backdrop-filter: blur(14px);
@@ -1598,34 +1595,34 @@ button {
 }
 
 @media (max-width: 1260px) {
-  .app-shell { padding: 10px; }
-  .lab-grid { grid-template-columns: 320px minmax(470px, 1.25fr) 300px; gap: 8px; }
+  .app-shell { padding: 0 6px; }
+  .lab-grid { grid-template-columns: 300px minmax(450px, 1.25fr) 280px; gap: 8px; padding: 0 6px; }
   .feed-panel, .garden-panel, .explain-panel { padding: 13px; }
-  .topbar { grid-template-columns: 220px 1fr 220px; }
+  .topbar { grid-template-columns: 200px 1fr 200px; padding: 6px 10px; }
   .simulation-badge { display: none; }
   .greenhouse { height: 430px; }
 }
 
 @media (max-width: 1030px) {
-  .topbar { grid-template-columns: 1fr auto; }
+  .topbar { grid-template-columns: 1fr auto; padding: 6px 8px; }
   .headline { grid-row: 2; grid-column: 1 / -1; margin: 4px 0 8px; }
-  .lab-grid { grid-template-columns: minmax(300px, .8fr) minmax(470px, 1.2fr); }
+  .lab-grid { grid-template-columns: minmax(280px, .8fr) minmax(450px, 1.2fr); padding: 0 6px; }
   .explain-panel { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); }
   .explain-panel > .panel-heading, .model-note { grid-column: 1 / -1; }
-  .bottom-bar { margin-top: 8px; }
+  .bottom-bar { margin: 8px 6px 0; }
 }
 
 @media (max-width: 760px) {
-  .app-shell { padding: 8px; }
-  .topbar { min-height: auto; margin-bottom: 8px; }
+  .app-shell { padding: 0; }
+  .topbar { min-height: auto; margin-bottom: 6px; padding: 6px 8px; }
   .brand-mark { width: 38px; height: 38px; }
   .headline h1 { font-size: 21px; }
-  .lab-grid { display: block; }
-  .panel { margin-bottom: 8px; }
+  .lab-grid { display: block; padding: 0 4px; }
+  .panel { margin-bottom: 6px; }
   .video-card { max-height: none; }
   .greenhouse { height: 440px; }
   .explain-panel { display: flex; }
-  .bottom-bar { align-items: flex-start; gap: 12px; flex-direction: column; padding: 12px; }
+  .bottom-bar { align-items: flex-start; gap: 10px; flex-direction: column; padding: 10px; margin: 6px 4px 0; }
   .lesson-route { width: 100%; justify-content: space-between; gap: 2px; }
   .lesson-route b { width: 8px; }
   .lesson-route span { font-size: 7px; }
@@ -1650,7 +1647,7 @@ button {
 
 .lab-grid {
   min-height: 0;
-  grid-template-columns: minmax(350px, .95fr) minmax(540px, 1.38fr) minmax(350px, .9fr);
+  grid-template-columns: minmax(320px, 0.95fr) minmax(500px, 1.4fr) minmax(300px, 0.85fr);
   align-items: stretch;
 }
 
