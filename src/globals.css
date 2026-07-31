@@ -61,8 +61,8 @@ button {
 }
 
 .brand-mark {
-  width: 45px;
-  height: 45px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
   color: #fff;
@@ -238,6 +238,8 @@ button {
   position: relative;
   aspect-ratio: 4 / 3.2;
   max-height: 400px;
+  width: 92%;
+  margin: 0 auto;
   border-radius: 18px;
   overflow: hidden;
   cursor: grab;
@@ -1079,11 +1081,11 @@ button {
 }
 
 .spark {
-  width: 31px;
-  height: 31px;
+  width: 38px;
+  height: 38px;
   display: grid;
   place-items: center;
-  flex: 0 0 31px;
+  flex: 0 0 38px;
   color: #654a12;
   border-radius: 10px;
   background: var(--yellow);
@@ -1498,8 +1500,8 @@ button {
 }
 
 .guide-steps i {
-  width: 28px;
-  height: 28px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
   margin-bottom: 17px;
@@ -1664,8 +1666,8 @@ button {
 }
 
 .step-number {
-  width: 31px;
-  height: 31px;
+  width: 38px;
+  height: 38px;
   font-size: 17px;
 }
 
@@ -1678,6 +1680,8 @@ button {
 .video-card {
   max-height: 400px;
   aspect-ratio: 4 / 3.2;
+  width: 92%;
+  margin: 0 auto;
 }
 
 .tag-row span {
@@ -1711,12 +1715,12 @@ button {
 .choice-button {
   min-height: 58px;
   padding: 12px 10px;
-  grid-template-columns: 32px 1fr;
+  grid-template-columns: 38px 1fr;
 }
 
 .choice-button > span {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   font-size: 21px;
 }
 
@@ -1989,7 +1993,7 @@ button {
 }
 
 .explain-panel {
-  gap: 11px;
+  gap: 14px;
 }
 
 .why-title small {
@@ -2040,13 +2044,13 @@ button {
 }
 
 .diversity-ring {
-  width: 82px;
-  height: 82px;
+  width: 90px;
+  height: 90px;
 }
 
 .diversity-ring::before {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
 }
 
 .diversity-ring strong {
@@ -2125,8 +2129,8 @@ button {
 }
 
 .narrator-icon {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
   border-radius: 13px;
@@ -2270,8 +2274,8 @@ button {
 }
 
 .manage-list > div > span {
-  width: 42px;
-  height: 42px;
+  width: 48px;
+  height: 48px;
   display: grid;
   place-items: center;
   border-radius: 12px;
@@ -2336,8 +2340,8 @@ button {
 }
 
 .answer-list button span {
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   border-radius: 10px;
