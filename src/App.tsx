@@ -1,5 +1,5 @@
 
-import { PointerEvent, useMemo, useRef, useState } from "react";
+import { PointerEvent, useEffect, useMemo, useRef, useState } from "react";
 import contentCards from "./data/content_cards.json";
 
 type ThemeKey = "art" | "tech" | "sport" | "nature" | "history";
@@ -189,7 +189,17 @@ export default function Home() {
   const [isLeaving, setIsLeaving] = useState(false);
   const pointerStart = useRef({ x: 0, time: 0 });
   const logId = useRef(0);
+  const reflectionDone = useRef(false);
+  const stepGuideDone = useRef<Set<number>>(new Set());
+  const [showStepGuide, setShowStepGuide] = useState(0);
   const current = contents[currentIndex];
+
+  function triggerGuide(step: number) {
+    if (stepGuideDone.current.has(step)) return;
+    setShowStepGuide(step);
+    stepGuideDone.current.add(step);
+    window.setTimeout(() => setShowStepGuide((s) => (s === step ? 0 : s)), 15000);
+  }
 
   const total = Object.values(interests).reduce((sum, value) => sum + value, 0);
   const dominant = themes.reduce((best, item) =>
@@ -280,6 +290,12 @@ export default function Home() {
     recommendationQueue.map((item) => item.theme),
   ).size;
   const challengeComplete = hasIntervened && visibleThemeCount >= 4;
+
+  useEffect(() => { triggerGuide(1); }, []);
+  useEffect(() => { if (actionCount >= 1) { triggerGuide(2); setShowStepGuide((s) => (s === 1 ? 0 : s)); } }, [actionCount]);
+  useEffect(() => { if (cocoonProgress > 0) triggerGuide(3); }, [cocoonProgress]);
+  useEffect(() => { if (challengeComplete) triggerGuide(4); }, [challengeComplete]);
+  useEffect(() => { if (reflectionAnswer) triggerGuide(5); }, [reflectionAnswer]);
 
   function addLog(action: string, text: string, metric: string) {
     logId.current += 1;
@@ -470,7 +486,9 @@ export default function Home() {
       "你主动打开了陌生主题：玻璃先裂开并向两侧松动，其他内容正在重新流入。",
       "三个低权重主题获得探索补偿 +2",
     );
-    window.setTimeout(() => setShowReflection(true), 1050);
+    if (!reflectionDone.current) {
+      window.setTimeout(() => setShowReflection(true), 1050);
+    }
   }
 
   function toggleBlock(theme: ThemeKey) {
@@ -621,6 +639,13 @@ export default function Home() {
             </div>
           </div>
 
+          {showStepGuide === 1 && (
+            <div className="step-guide guide-tag-top">
+              <span className="guide-arrow">↗</span>
+              <p>标签就是算法给每条内容贴的"名片"。刷到一条视频前，它已经被分好类了。</p>
+            </div>
+          )}
+
           <div className="choice-grid four-actions">
             <button
               className="choice-button next"
@@ -651,6 +676,13 @@ export default function Home() {
               <small>很感兴趣 +3</small>
             </button>
           </div>
+
+          {showStepGuide === 2 && (
+            <div className="step-guide guide-below">
+              <span className="guide-arrow">↑</span>
+              <p>你的每一次点击，都在教算法"我喜欢什么"。点喜欢就是大声说想要，划走就是小声说不感兴趣。</p>
+            </div>
+          )}
 
           <div className="tag-weight-card">
             <div className="tag-weight-title">
@@ -707,6 +739,13 @@ export default function Home() {
               <span>信息温室</span>
               <p>{stageCopy[cocoonLevel][1]}</p>
             </div>
+
+            {showStepGuide === 3 && (
+              <div className="step-guide guide-greenhouse">
+                <span className="guide-arrow">←</span>
+                <p>看，你喜欢的花越来越大，其他的被挤到边上。玻璃墙一道一道围过来——这就是你的"信息茧房"。</p>
+              </div>
+            )}
 
             <div className="flower-bed">
               {themes.map((theme, index) => {
@@ -911,6 +950,12 @@ export default function Home() {
                 <small>直接修改你的喜好账本</small>
               </button>
             </div>
+            {showStepGuide === 4 && (
+              <div className="step-guide guide-left">
+                <span className="guide-arrow">→</span>
+                <p>点"探索新主题"，主动告诉算法"给我看看别的"。玻璃会裂开，更多类型的内容又回来了。</p>
+              </div>
+            )}
             {challengeComplete && (
               <button
                 className="reflection-trigger"
@@ -918,6 +963,12 @@ export default function Home() {
               >
                 回答反思题，完成实验 →
               </button>
+            )}
+            {showStepGuide === 5 && (
+              <div className="step-guide guide-below">
+                <span className="guide-arrow">↑</span>
+                <p>怎么样？你发现了算法的秘密：它只给你看喜欢的，你就只点喜欢的，它就更只给你看那些。</p>
+              </div>
             )}
           </div>
 
@@ -1017,7 +1068,7 @@ export default function Home() {
       {showReflection && (
         <div className="guide-backdrop" role="dialog" aria-modal="true" aria-label="实验反思题">
           <div className="reflection-card">
-            <button className="guide-close" onClick={() => setShowReflection(false)} aria-label="关闭反思题">×</button>
+            <button className="guide-close" onClick={() => { setShowReflection(false); reflectionDone.current = true; }} aria-label="关闭反思题">×</button>
             <span className="guide-kicker">完成与反思</span>
             <h2>为什么连续喜欢同一类内容后，推荐会越来越单一？</h2>
             <div className="answer-list">
@@ -1045,7 +1096,7 @@ export default function Home() {
                 </p>
               </div>
             )}
-            <button className="start-button" onClick={() => setShowReflection(false)}>
+            <button className="start-button" onClick={() => { setShowReflection(false); reflectionDone.current = true; }}>
               返回实验
             </button>
           </div>

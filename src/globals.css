@@ -2452,3 +2452,92 @@ button {
     padding: 24px 16px 18px;
   }
 }
+
+/* Step guide bubbles */
+.step-guide {
+  position: absolute;
+  z-index: 30;
+  max-width: 260px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(23, 60, 54, 0.92);
+  color: #eef7e9;
+  box-shadow: 0 8px 24px rgba(23, 60, 54, 0.35);
+  backdrop-filter: blur(6px);
+  animation: guide-in .35s ease;
+}
+
+.step-guide p {
+  font-size: 16px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.guide-arrow {
+  position: absolute;
+  font-size: 18px;
+  color: rgba(23, 60, 54, 0.92);
+  line-height: 1;
+}
+
+/* Right-pointing arrow (step 1: tag row) */
+.guide-right {
+  top: 6px;
+  right: -8px;
+  transform: translateX(100%);
+}
+.guide-right .guide-arrow {
+  top: 8px;
+  left: -12px;
+}
+
+/* Below arrow (step 2: buttons, step 5: reflection) */
+.guide-below {
+  left: 50%;
+  bottom: -8px;
+  transform: translate(-50%, 100%);
+}
+.guide-below .guide-arrow {
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Left-pointing (step 3: greenhouse) */
+.guide-greenhouse {
+  top: 60px;
+  right: 8px;
+}
+.guide-greenhouse .guide-arrow {
+  top: 10px;
+  right: -10px;
+}
+
+/* Right-pointing for step 4 */
+.guide-left {
+  top: 0;
+  left: -8px;
+  transform: translateX(-100%);
+  width: 220px;
+}
+.guide-left .guide-arrow {
+  top: 12px;
+  right: -12px;
+}
+
+/* Step 1: top-right of video card area */
+.guide-tag-top {
+  top: 68px;
+  right: 8px;
+  max-width: 240px;
+}
+.guide-tag-top .guide-arrow {
+  top: -8px;
+  right: 20px;
+  font-size: 14px;
+}
+
+@keyframes guide-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; }
+}
