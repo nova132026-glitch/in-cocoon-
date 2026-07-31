@@ -146,7 +146,7 @@ button {
 .lab-grid {
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) minmax(480px, 1.5fr) minmax(280px, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
   padding: 0 8px;
 }
@@ -236,9 +236,9 @@ button {
 
 .video-card {
   position: relative;
-  aspect-ratio: 4 / 3.2;
-  max-height: 400px;
-  width: 92%;
+  aspect-ratio: 4 / 3;
+  max-height: 460px;
+  width: 94%;
   margin: 0 auto;
   border-radius: 18px;
   overflow: hidden;
@@ -530,7 +530,7 @@ button {
 
 .greenhouse {
   position: relative;
-  height: 440px;
+  height: 500px;
   overflow: hidden;
   border: 1px solid rgba(63, 123, 105, 0.13);
   border-radius: 20px;
@@ -1598,11 +1598,11 @@ button {
 
 @media (max-width: 1260px) {
   .app-shell { padding: 0; }
-  .lab-grid { grid-template-columns: minmax(260px, 1fr) minmax(420px, 1.4fr) minmax(260px, 1fr); gap: 6px; padding: 0 6px; }
+  .lab-grid { grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding: 0 6px; }
   .feed-panel, .garden-panel, .explain-panel { padding: 13px; }
   .topbar { grid-template-columns: 180px 1fr 180px; padding: 6px 10px; }
   .simulation-badge { display: none; }
-  .greenhouse { height: 400px; }
+  .greenhouse { height: 460px; }
   .experiment-narrator { grid-template-columns: 1fr; }
 }
 
@@ -1623,7 +1623,7 @@ button {
   .lab-grid { display: block; padding: 0 4px; }
   .panel { margin-bottom: 6px; }
   .video-card { max-height: none; }
-  .greenhouse { height: 400px; }
+  .greenhouse { height: 460px; }
   .explain-panel { display: flex; }
   .bottom-bar { align-items: flex-start; gap: 10px; flex-direction: column; padding: 10px; margin: 6px 4px 0; }
   .lesson-route { width: 100%; justify-content: space-between; gap: 2px; }
@@ -1650,7 +1650,7 @@ button {
 
 .lab-grid {
   min-height: 0;
-  grid-template-columns: minmax(300px, 1fr) minmax(480px, 1.5fr) minmax(280px, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: stretch;
 }
 
@@ -1678,9 +1678,9 @@ button {
 }
 
 .video-card {
-  max-height: 400px;
-  aspect-ratio: 4 / 3.2;
-  width: 92%;
+  max-height: 460px;
+  aspect-ratio: 4 / 3;
+  width: 94%;
   margin: 0 auto;
 }
 
@@ -1976,8 +1976,8 @@ button {
 }
 
 .mini-thumb {
-  height: 60px;
-  font-size: 26px;
+  height: 72px;
+  font-size: 30px;
 }
 
 .mini-card small {
@@ -2375,7 +2375,7 @@ button {
 
 @media (max-width: 1320px) {
   .lab-grid {
-    grid-template-columns: minmax(280px, 1fr) minmax(440px, 1.35fr) minmax(280px, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .feed-panel,
