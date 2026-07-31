@@ -146,7 +146,7 @@ button {
 .lab-grid {
   min-height: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: minmax(300px, 1fr) minmax(480px, 1.5fr) minmax(280px, 1fr);
   gap: 8px;
   padding: 0 8px;
 }
@@ -1598,7 +1598,7 @@ button {
 
 @media (max-width: 1260px) {
   .app-shell { padding: 0; }
-  .lab-grid { grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding: 0 6px; }
+  .lab-grid { grid-template-columns: minmax(240px, 1fr) minmax(400px, 1.4fr) minmax(240px, 1fr); gap: 6px; padding: 0 6px; }
   .feed-panel, .garden-panel, .explain-panel { padding: 13px; }
   .topbar { grid-template-columns: 180px 1fr 180px; padding: 6px 10px; }
   .simulation-badge { display: none; }
@@ -1650,8 +1650,8 @@ button {
 
 .lab-grid {
   min-height: 0;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: stretch;
+  grid-template-columns: minmax(300px, 1fr) minmax(480px, 1.5fr) minmax(280px, 1fr);
+  align-items: start;
 }
 
 .feed-panel,
@@ -2375,7 +2375,7 @@ button {
 
 @media (max-width: 1320px) {
   .lab-grid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: minmax(260px, 1fr) minmax(420px, 1.35fr) minmax(260px, 1fr);
   }
 
   .feed-panel,
