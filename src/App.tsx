@@ -641,7 +641,8 @@ export default function Home() {
 
           {showStepGuide === 1 && (
             <div className="step-guide guide-tag-top">
-              <span className="guide-arrow">↗</span>
+              <button className="guide-close" onClick={() => setShowStepGuide(0)}>×</button>
+              <span className="guide-arrow">▲</span>
               <p>标签就是算法给每条内容贴的"名片"。刷到一条视频前，它已经被分好类了。</p>
             </div>
           )}
@@ -679,7 +680,8 @@ export default function Home() {
 
           {showStepGuide === 2 && (
             <div className="step-guide guide-below">
-              <span className="guide-arrow">↑</span>
+              <button className="guide-close" onClick={() => setShowStepGuide(0)}>×</button>
+              <span className="guide-arrow">▼</span>
               <p>你的每一次点击，都在教算法"我喜欢什么"。点喜欢就是大声说想要，划走就是小声说不感兴趣。</p>
             </div>
           )}
@@ -742,7 +744,8 @@ export default function Home() {
 
             {showStepGuide === 3 && (
               <div className="step-guide guide-greenhouse">
-                <span className="guide-arrow">←</span>
+                <button className="guide-close" onClick={() => setShowStepGuide(0)}>×</button>
+                <span className="guide-arrow">◀</span>
                 <p>看，你喜欢的花越来越大，其他的被挤到边上。玻璃墙一道一道围过来——这就是你的"信息茧房"。</p>
               </div>
             )}
@@ -952,7 +955,8 @@ export default function Home() {
             </div>
             {showStepGuide === 4 && (
               <div className="step-guide guide-left">
-                <span className="guide-arrow">→</span>
+                <button className="guide-close" onClick={() => setShowStepGuide(0)}>×</button>
+                <span className="guide-arrow">◀</span>
                 <p>点"探索新主题"，主动告诉算法"给我看看别的"。玻璃会裂开，更多类型的内容又回来了。</p>
               </div>
             )}
@@ -966,7 +970,8 @@ export default function Home() {
             )}
             {showStepGuide === 5 && (
               <div className="step-guide guide-below">
-                <span className="guide-arrow">↑</span>
+                <button className="guide-close" onClick={() => setShowStepGuide(0)}>×</button>
+                <span className="guide-arrow">▼</span>
                 <p>怎么样？你发现了算法的秘密：它只给你看喜欢的，你就只点喜欢的，它就更只给你看那些。</p>
               </div>
             )}
