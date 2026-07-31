@@ -922,9 +922,6 @@ export default function Home() {
             )}
           </div>
 
-          <p className="model-note">
-            教学用简化模拟：网页不识别真实视频、不采集个人数据，也不代表任何真实平台的完整算法。
-          </p>
         </aside>
 
         <section className="experiment-narrator" aria-live="polite">

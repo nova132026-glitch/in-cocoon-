@@ -236,8 +236,8 @@ button {
 
 .video-card {
   position: relative;
-  aspect-ratio: 4 / 3;
-  max-height: 460px;
+  aspect-ratio: 4 / 2.8;
+  max-height: 520px;
   width: 94%;
   margin: 0 auto;
   border-radius: 18px;
@@ -1651,7 +1651,7 @@ button {
 .lab-grid {
   min-height: 0;
   grid-template-columns: minmax(300px, 1fr) minmax(480px, 1.5fr) minmax(280px, 1fr);
-  align-items: start;
+  align-items: stretch;
 }
 
 .feed-panel,
@@ -1678,8 +1678,8 @@ button {
 }
 
 .video-card {
-  max-height: 460px;
-  aspect-ratio: 4 / 3;
+  max-height: 520px;
+  aspect-ratio: 4 / 2.8;
   width: 94%;
   margin: 0 auto;
 }
