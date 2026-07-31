@@ -735,7 +735,7 @@ export default function Home() {
               <div className="step-guide guide-greenhouse">
                 <button className="guide-close" onClick={() => hideGuide(3)}>×</button>
                 <span className="guide-arrow">◀</span>
-                <p>看，你喜欢的花越来越大，其他的被挤到边上。玻璃墙一道一道围过来——这就是你的"信息茧房"。</p>
+                <p>你喜欢的花会在你的点击影响下越来越大，其他的被挤到边上。玻璃墙一道一道围过来——这就是你的"信息茧房"。</p>
               </div>
             )}
 

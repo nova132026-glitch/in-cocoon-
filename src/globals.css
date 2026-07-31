@@ -1283,7 +1283,7 @@ button {
 
 .challenge-card {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   padding: 16px;
   color: white;
   border: none;
@@ -2546,10 +2546,6 @@ button {
   top: -8px;
   right: 24px;
   font-size: 14px;
-}
-
-.challenge-card {
-  position: relative;
 }
 
 @keyframes guide-in {
