@@ -162,7 +162,20 @@ button {
 }
 
 .feed-panel,
-.garden-panel,
+.garden-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.feed-panel .video-card {
+  flex: 1;
+}
+
+.garden-panel .greenhouse {
+  flex: 1;
+}
+
 .explain-panel {
   padding: 18px;
 }
@@ -1655,7 +1668,18 @@ button {
 }
 
 .feed-panel,
-.garden-panel,
+.garden-panel {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px 10px;
+}
+
+.feed-panel .video-card,
+.garden-panel .greenhouse {
+  flex: 1;
+}
+
 .explain-panel {
   min-height: 0;
   padding: 16px 16px 10px;
