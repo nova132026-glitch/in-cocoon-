@@ -245,7 +245,7 @@ export default function Home() {
       const extras = eligible.filter(
         (item) => !byTheme.some((picked) => picked.id === item.id),
       );
-      return [...byTheme, ...extras].slice(0, 6);
+      return [...byTheme, ...extras].slice(0, 4);
     }
 
     const personalized = eligible.slice(0, 4);
@@ -266,7 +266,7 @@ export default function Home() {
       .filter((item): item is (typeof eligible)[number] => Boolean(item))
       .slice(0, 2)
       .map((item) => ({ ...item, isExplore: true }));
-    return [...personalized, ...exploreCards].slice(0, 6);
+    return [...personalized, ...exploreCards].slice(0, 4);
   }, [
     blockedThemes,
     currentIndex,

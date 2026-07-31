@@ -342,9 +342,9 @@ button {
 
 .video-copy {
   position: absolute;
-  left: 16px;
-  right: 16px;
-  bottom: 45px;
+  left: 18px;
+  right: 18px;
+  bottom: 50px;
   color: white;
 }
 
@@ -994,7 +994,7 @@ button {
 .mini-card {
   min-width: 0;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
   text-align: left;
   border: 1px solid transparent;
   border-radius: 10px;
@@ -1069,7 +1069,7 @@ button {
 .why-card,
 .profile-card,
 .diversity-card {
-  padding: 12px;
+  padding: 14px;
 }
 
 .why-title {
@@ -1269,7 +1269,7 @@ button {
 .challenge-card {
   position: relative;
   overflow: hidden;
-  padding: 13px;
+  padding: 16px;
   color: white;
   border: none;
   background:
@@ -1631,7 +1631,7 @@ button {
   .guide-card { padding: 24px 16px 18px; }
   .guide-card h2 { font-size: 29px; padding-right: 25px; }
   .guide-steps { grid-template-columns: repeat(2, 1fr); }
-  .guide-steps > div { min-height: 100px; }
+  .guide-steps > div { min-height: 120px; }
   .guide-steps i { margin-bottom: 8px; }
 }
 
@@ -1656,7 +1656,7 @@ button {
 .garden-panel,
 .explain-panel {
   min-height: 0;
-  padding: 14px;
+  padding: 16px;
 }
 
 .panel-heading h2 {
@@ -1709,8 +1709,8 @@ button {
 }
 
 .choice-button {
-  min-height: 54px;
-  padding: 10px;
+  min-height: 58px;
+  padding: 12px 10px;
   grid-template-columns: 32px 1fr;
 }
 
@@ -1740,7 +1740,7 @@ button {
 
 .tag-weight-card {
   margin-top: 10px;
-  padding: 13px;
+  padding: 14px 16px;
   border: 1px solid var(--border);
   border-radius: 15px;
   background: rgba(255, 255, 255, .78);
@@ -1968,7 +1968,7 @@ button {
 }
 
 .mini-card-row.six-cards {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .mini-thumb {
@@ -2407,7 +2407,7 @@ button {
   }
 
   .mini-card-row.six-cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .log-list {
