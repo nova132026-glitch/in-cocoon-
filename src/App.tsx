@@ -1,5 +1,5 @@
 
-import { PointerEvent, useEffect, useMemo, useRef, useState } from "react";
+import { PointerEvent, useMemo, useRef, useState } from "react";
 import contentCards from "./data/content_cards.json";
 
 type ThemeKey = "art" | "tech" | "sport" | "nature" | "history";
@@ -190,16 +190,12 @@ export default function Home() {
   const pointerStart = useRef({ x: 0, time: 0 });
   const logId = useRef(0);
   const reflectionDone = useRef(false);
-  const stepGuideDone = useRef<Set<number>>(new Set());
-  const [showStepGuide, setShowStepGuide] = useState(0);
-  const current = contents[currentIndex];
+  const [visibleGuides, setVisibleGuides] = useState<Set<number>>(new Set([1, 2, 3, 4, 5]));
 
-  function triggerGuide(step: number) {
-    if (stepGuideDone.current.has(step)) return;
-    setShowStepGuide(step);
-    stepGuideDone.current.add(step);
-    window.setTimeout(() => setShowStepGuide((s) => (s === step ? 0 : s)), 15000);
+  function hideGuide(n: number) {
+    setVisibleGuides((prev) => { const next = new Set(prev); next.delete(n); return next; });
   }
+  const current = contents[currentIndex];
 
   const total = Object.values(interests).reduce((sum, value) => sum + value, 0);
   const dominant = themes.reduce((best, item) =>
@@ -290,12 +286,6 @@ export default function Home() {
     recommendationQueue.map((item) => item.theme),
   ).size;
   const challengeComplete = hasIntervened && visibleThemeCount >= 4;
-
-  useEffect(() => { triggerGuide(1); }, []);
-  useEffect(() => { if (actionCount >= 1) { triggerGuide(2); setShowStepGuide((s) => (s === 1 ? 0 : s)); } }, [actionCount]);
-  useEffect(() => { if (cocoonProgress > 0) triggerGuide(3); }, [cocoonProgress]);
-  useEffect(() => { if (challengeComplete) triggerGuide(4); }, [challengeComplete]);
-  useEffect(() => { if (reflectionAnswer) triggerGuide(5); }, [reflectionAnswer]);
 
   function addLog(action: string, text: string, metric: string) {
     logId.current += 1;
@@ -639,14 +629,6 @@ export default function Home() {
             </div>
           </div>
 
-          {showStepGuide === 1 && (
-            <div className="step-guide guide-tag-top">
-              <button className="guide-close" onClick={() => setShowStepGuide(0)}>×</button>
-              <span className="guide-arrow">▲</span>
-              <p>标签就是算法给每条内容贴的"名片"。刷到一条视频前，它已经被分好类了。</p>
-            </div>
-          )}
-
           <div className="choice-grid four-actions">
             <button
               className="choice-button next"
@@ -678,9 +660,9 @@ export default function Home() {
             </button>
           </div>
 
-          {showStepGuide === 2 && (
+          {visibleGuides.has(2) && (
             <div className="step-guide guide-below">
-              <button className="guide-close" onClick={() => setShowStepGuide(0)}>×</button>
+              <button className="guide-close" onClick={() => hideGuide(2)}>×</button>
               <span className="guide-arrow">▼</span>
               <p>你的每一次点击，都在教算法"我喜欢什么"。点喜欢就是大声说想要，划走就是小声说不感兴趣。</p>
             </div>
@@ -691,6 +673,13 @@ export default function Home() {
               <span>实验一｜预设内容标签</span>
               <small>这些内容会真的参与计算</small>
             </div>
+            {visibleGuides.has(1) && (
+              <div className="step-guide guide-tag-top">
+                <button className="guide-close" onClick={() => hideGuide(1)}>×</button>
+                <span className="guide-arrow">▲</span>
+                <p>标签就是算法给每条内容贴的"名片"。刷到一条视频前，它已经被分好类了。</p>
+              </div>
+            )}
             {currentTagWeights.map(({ tag, weight }) => (
               <div className="tag-weight-row" key={tag}>
                 <span>{tag}</span>
@@ -742,9 +731,9 @@ export default function Home() {
               <p>{stageCopy[cocoonLevel][1]}</p>
             </div>
 
-            {showStepGuide === 3 && (
+            {visibleGuides.has(3) && (
               <div className="step-guide guide-greenhouse">
-                <button className="guide-close" onClick={() => setShowStepGuide(0)}>×</button>
+                <button className="guide-close" onClick={() => hideGuide(3)}>×</button>
                 <span className="guide-arrow">◀</span>
                 <p>看，你喜欢的花越来越大，其他的被挤到边上。玻璃墙一道一道围过来——这就是你的"信息茧房"。</p>
               </div>
@@ -953,9 +942,9 @@ export default function Home() {
                 <small>直接修改你的喜好账本</small>
               </button>
             </div>
-            {showStepGuide === 4 && (
+            {visibleGuides.has(4) && (
               <div className="step-guide guide-left">
-                <button className="guide-close" onClick={() => setShowStepGuide(0)}>×</button>
+                <button className="guide-close" onClick={() => hideGuide(4)}>×</button>
                 <span className="guide-arrow">◀</span>
                 <p>点"探索新主题"，主动告诉算法"给我看看别的"。玻璃会裂开，更多类型的内容又回来了。</p>
               </div>
@@ -968,9 +957,9 @@ export default function Home() {
                 回答反思题，完成实验 →
               </button>
             )}
-            {showStepGuide === 5 && (
+            {visibleGuides.has(5) && (
               <div className="step-guide guide-below">
-                <button className="guide-close" onClick={() => setShowStepGuide(0)}>×</button>
+                <button className="guide-close" onClick={() => hideGuide(5)}>×</button>
                 <span className="guide-arrow">▼</span>
                 <p>怎么样？你发现了算法的秘密：它只给你看喜欢的，你就只点喜欢的，它就更只给你看那些。</p>
               </div>

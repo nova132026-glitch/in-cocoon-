@@ -1767,6 +1767,7 @@ button {
 }
 
 .tag-weight-card {
+  position: relative;
   margin-top: 10px;
   padding: 14px 16px;
   border: 1px solid var(--border);
@@ -2021,7 +2022,7 @@ button {
 }
 
 .why-title small {
-  font-size: 16px;
+  font-size: 21px;
 }
 
 .why-title strong {
@@ -2477,8 +2478,8 @@ button {
   position: absolute;
   top: 4px;
   right: 6px;
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   cursor: pointer;
   display: grid;
   place-items: center;
@@ -2486,12 +2487,13 @@ button {
   border-radius: 50%;
   background: transparent;
   color: #8a7340;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1;
+  font-weight: 700;
 }
 
 .guide-close:hover {
-  background: rgba(180, 140, 60, 0.15);
+  background: rgba(180, 140, 60, 0.2);
 }
 
 .guide-arrow {
