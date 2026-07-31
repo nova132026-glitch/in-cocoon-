@@ -144,7 +144,7 @@ button {
 }
 
 .lab-grid {
-  min-height: calc(100vh - 90px);
+  min-height: 0;
   display: grid;
   grid-template-columns: minmax(300px, 1fr) minmax(480px, 1.5fr) minmax(280px, 1fr);
   gap: 8px;
@@ -171,7 +171,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 13px;
+  margin-bottom: 16px;
 }
 
 .panel-heading > div {
@@ -1658,7 +1658,7 @@ button {
 .garden-panel,
 .explain-panel {
   min-height: 0;
-  padding: 16px;
+  padding: 16px 16px 10px;
 }
 
 .panel-heading h2 {
