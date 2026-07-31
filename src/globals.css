@@ -236,8 +236,8 @@ button {
 
 .video-card {
   position: relative;
-  aspect-ratio: 4 / 3.6;
-  max-height: 340px;
+  aspect-ratio: 4 / 3.2;
+  max-height: 400px;
   border-radius: 18px;
   overflow: hidden;
   cursor: grab;
@@ -528,7 +528,7 @@ button {
 
 .greenhouse {
   position: relative;
-  height: 380px;
+  height: 440px;
   overflow: hidden;
   border: 1px solid rgba(63, 123, 105, 0.13);
   border-radius: 20px;
@@ -1600,7 +1600,7 @@ button {
   .feed-panel, .garden-panel, .explain-panel { padding: 13px; }
   .topbar { grid-template-columns: 180px 1fr 180px; padding: 6px 10px; }
   .simulation-badge { display: none; }
-  .greenhouse { height: 380px; }
+  .greenhouse { height: 400px; }
   .experiment-narrator { grid-template-columns: 1fr; }
 }
 
@@ -1621,7 +1621,7 @@ button {
   .lab-grid { display: block; padding: 0 4px; }
   .panel { margin-bottom: 6px; }
   .video-card { max-height: none; }
-  .greenhouse { height: 380px; }
+  .greenhouse { height: 400px; }
   .explain-panel { display: flex; }
   .bottom-bar { align-items: flex-start; gap: 10px; flex-direction: column; padding: 10px; margin: 6px 4px 0; }
   .lesson-route { width: 100%; justify-content: space-between; gap: 2px; }
@@ -1676,8 +1676,8 @@ button {
 }
 
 .video-card {
-  max-height: 340px;
-  aspect-ratio: 4 / 3.6;
+  max-height: 400px;
+  aspect-ratio: 4 / 3.2;
 }
 
 .tag-row span {
@@ -1972,8 +1972,8 @@ button {
 }
 
 .mini-thumb {
-  height: 50px;
-  font-size: 23px;
+  height: 60px;
+  font-size: 26px;
 }
 
 .mini-card small {
@@ -2036,6 +2036,7 @@ button {
 
 .diversity-card {
   grid-template-columns: 86px 1fr;
+  padding: 16px;
 }
 
 .diversity-ring {

@@ -605,7 +605,7 @@ export default function Home() {
               ))}
             </div>
             <div className="video-copy">
-              <span className="creator">@ 知识花园 · {current.id}</span>
+              <span className="creator">{current.id}</span>
               <h3>{current.title}</h3>
               <p>{current.summary}</p>
             </div>
