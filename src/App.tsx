@@ -610,7 +610,7 @@ export default function Home() {
               <p>{current.summary}</p>
             </div>
             <div className="swipe-hint">
-              <span>←</span> 慢划是普通切换，1秒内快划是不感兴趣
+              <span>←</span> 慢划是换下一条，1秒内快划是不感兴趣
             </div>
             <div
               className="swipe-feedback"
@@ -629,7 +629,7 @@ export default function Home() {
               disabled={isLeaving}
             >
               <span>→</span>
-              <strong>普通切换</strong>
+              <strong>换下一条</strong>
               <small>弱负反馈 −1</small>
             </button>
             <button

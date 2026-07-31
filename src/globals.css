@@ -146,9 +146,9 @@ button {
 .lab-grid {
   min-height: calc(100vh - 90px);
   display: grid;
-  grid-template-columns: minmax(320px, 0.95fr) minmax(500px, 1.4fr) minmax(300px, 0.85fr);
-  gap: 10px;
-  padding: 0 10px;
+  grid-template-columns: minmax(300px, 1fr) minmax(480px, 1.5fr) minmax(280px, 1fr);
+  gap: 8px;
+  padding: 0 8px;
 }
 
 .panel {
@@ -236,8 +236,8 @@ button {
 
 .video-card {
   position: relative;
-  aspect-ratio: 4 / 4.12;
-  max-height: 438px;
+  aspect-ratio: 4 / 3.6;
+  max-height: 340px;
   border-radius: 18px;
   overflow: hidden;
   cursor: grab;
@@ -423,7 +423,7 @@ button {
 
 .swipe-feedback small {
   color: rgba(255,255,255,.76);
-  font-size: 9px;
+  font-size: 12px;
   margin-top: 3px;
 }
 
@@ -528,7 +528,7 @@ button {
 
 .greenhouse {
   position: relative;
-  height: 453px;
+  height: 380px;
   overflow: hidden;
   border: 1px solid rgba(63, 123, 105, 0.13);
   border-radius: 20px;
@@ -1030,7 +1030,7 @@ button {
 
 .mini-card small {
   color: var(--muted);
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .mini-card strong {
@@ -1043,7 +1043,7 @@ button {
 
 .mini-card em {
   color: var(--mint-dark);
-  font-size: 9px;
+  font-size: 12px;
   font-style: normal;
 }
 
@@ -1119,7 +1119,7 @@ button {
   border-radius: 7px;
   color: var(--mint-dark);
   background: var(--mint-soft);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 900;
 }
 
@@ -1156,7 +1156,7 @@ button {
 
 .card-title small {
   color: var(--muted);
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .profile-bars {
@@ -1247,7 +1247,7 @@ button {
 
 .diversity-ring small {
   color: var(--muted);
-  font-size: 9px;
+  font-size: 12px;
   margin-top: 3px;
 }
 
@@ -1345,7 +1345,7 @@ button {
 }
 
 .challenge-card button small {
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
   opacity: .7;
 }
@@ -1595,19 +1595,20 @@ button {
 }
 
 @media (max-width: 1260px) {
-  .app-shell { padding: 0 6px; }
-  .lab-grid { grid-template-columns: 300px minmax(450px, 1.25fr) 280px; gap: 8px; padding: 0 6px; }
+  .app-shell { padding: 0; }
+  .lab-grid { grid-template-columns: minmax(260px, 1fr) minmax(420px, 1.4fr) minmax(260px, 1fr); gap: 6px; padding: 0 6px; }
   .feed-panel, .garden-panel, .explain-panel { padding: 13px; }
-  .topbar { grid-template-columns: 200px 1fr 200px; padding: 6px 10px; }
+  .topbar { grid-template-columns: 180px 1fr 180px; padding: 6px 10px; }
   .simulation-badge { display: none; }
-  .greenhouse { height: 430px; }
+  .greenhouse { height: 380px; }
+  .experiment-narrator { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 1030px) {
   .topbar { grid-template-columns: 1fr auto; padding: 6px 8px; }
   .headline { grid-row: 2; grid-column: 1 / -1; margin: 4px 0 8px; }
-  .lab-grid { grid-template-columns: minmax(280px, .8fr) minmax(450px, 1.2fr); padding: 0 6px; }
-  .explain-panel { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .lab-grid { grid-template-columns: 1fr 1fr; padding: 0 6px; }
+  .explain-panel { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, 1fr); }
   .explain-panel > .panel-heading, .model-note { grid-column: 1 / -1; }
   .bottom-bar { margin: 8px 6px 0; }
 }
@@ -1620,17 +1621,17 @@ button {
   .lab-grid { display: block; padding: 0 4px; }
   .panel { margin-bottom: 6px; }
   .video-card { max-height: none; }
-  .greenhouse { height: 440px; }
+  .greenhouse { height: 380px; }
   .explain-panel { display: flex; }
   .bottom-bar { align-items: flex-start; gap: 10px; flex-direction: column; padding: 10px; margin: 6px 4px 0; }
   .lesson-route { width: 100%; justify-content: space-between; gap: 2px; }
   .lesson-route b { width: 8px; }
-  .lesson-route span { font-size: 9px; }
+  .lesson-route span { font-size: 12px; }
   .bottom-actions { width: 100%; justify-content: flex-end; }
   .guide-card { padding: 24px 16px 18px; }
   .guide-card h2 { font-size: 29px; padding-right: 25px; }
   .guide-steps { grid-template-columns: repeat(2, 1fr); }
-  .guide-steps > div { min-height: 116px; }
+  .guide-steps > div { min-height: 100px; }
   .guide-steps i { margin-bottom: 8px; }
 }
 
@@ -1647,7 +1648,7 @@ button {
 
 .lab-grid {
   min-height: 0;
-  grid-template-columns: minmax(320px, 0.95fr) minmax(500px, 1.4fr) minmax(300px, 0.85fr);
+  grid-template-columns: minmax(300px, 1fr) minmax(480px, 1.5fr) minmax(280px, 1fr);
   align-items: stretch;
 }
 
@@ -1655,7 +1656,7 @@ button {
 .garden-panel,
 .explain-panel {
   min-height: 0;
-  padding: 20px;
+  padding: 14px;
 }
 
 .panel-heading h2 {
@@ -1675,8 +1676,8 @@ button {
 }
 
 .video-card {
-  max-height: 410px;
-  aspect-ratio: 4 / 4.05;
+  max-height: 340px;
+  aspect-ratio: 4 / 3.6;
 }
 
 .tag-row span {
@@ -2099,9 +2100,9 @@ button {
 .experiment-narrator {
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: minmax(400px, 1.15fr) minmax(620px, 1.85fr);
-  gap: 12px;
-  padding: 13px;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 10px;
+  padding: 12px;
   border: 1px solid rgba(255,255,255,.75);
   border-radius: 19px;
   background: rgba(255,255,252,.86);
@@ -2369,13 +2370,13 @@ button {
 
 @media (max-width: 1320px) {
   .lab-grid {
-    grid-template-columns: 330px minmax(500px, 1.3fr) 330px;
+    grid-template-columns: minmax(280px, 1fr) minmax(440px, 1.35fr) minmax(280px, 1fr);
   }
 
   .feed-panel,
   .garden-panel,
   .explain-panel {
-    padding: 15px;
+    padding: 14px;
   }
 
   .mini-card-row.six-cards {
