@@ -373,15 +373,15 @@ export default function Home() {
     );
 
     let message = "";
-    if (kind === “like”) {
+    if (kind === "like") {
       firstLikePending.current = false;
-      message = `你点赞了”${current.title}”，系统把”${current.topic}”理解为明确兴趣。`;
+      message = `你点赞了"${current.title}"，系统把"${current.topic}"理解为明确兴趣。`;
       setDropTheme(current.theme);
       window.setTimeout(() => setDropTheme(null), 900);
     } else if (kind === "stay") {
-      message = `你继续观看了这条内容，“${current.topic}”获得一次温和加分。`;
+      message = `你继续观看了这条内容，"${current.topic}"获得一次温和加分。`;
     } else if (kind === "next") {
-      message = `你正常切换到下一条，系统稍微降低了“${current.topic}”的排序。`;
+      message = `你正常切换到下一条，系统稍微降低了"${current.topic}"的排序。`;
     } else {
       message = `你在1秒内快速划走，系统把它理解为明确的不感兴趣。`;
     }
@@ -495,7 +495,7 @@ export default function Home() {
     if (isBlocked) {
       addLog(
         "恢复主题",
-        `你恢复了“${themes.find((item) => item.key === theme)?.name}”主题，它可以重新参与推荐。`,
+        `你恢复了"${themes.find((item) => item.key === theme)?.name}"主题，它可以重新参与推荐。`,
         "管理偏好｜恢复推荐资格",
       );
     } else {
@@ -508,7 +508,7 @@ export default function Home() {
       setEvidence(nextEvidence);
       addLog(
         "管理偏好",
-        `你主动减少了“${themes.find((item) => item.key === theme)?.name}”推荐，系统立即修改了画像。`,
+        `你主动减少了"${themes.find((item) => item.key === theme)?.name}"推荐，系统立即修改了画像。`,
         "管理偏好｜该主题退出普通推荐",
       );
       if (current.theme === theme) {
@@ -1047,7 +1047,7 @@ export default function Home() {
             <button className="guide-close" onClick={() => setShowManage(false)} aria-label="关闭偏好管理">×</button>
             <span className="guide-kicker">主动调整算法</span>
             <h2>管理我的推荐偏好</h2>
-            <p>这不是删除真实账号数据，而是模拟”主动告诉系统少推荐某些内容”。</p>
+            <p>这不是删除真实账号数据，而是模拟"主动告诉系统少推荐某些内容"。</p>
             <div className="manage-list">
               {themes.map((theme) => {
                 const blocked = blockedThemes.includes(theme.key);
@@ -1097,7 +1097,7 @@ export default function Home() {
                 <p>
                   {reflectionAnswer === "B"
                     ? "算法把行为当成兴趣证据，再用推荐结果影响下一次行为，这就是不断自我加强的反馈循环。"
-                    : "其他内容并没有消失，真正改变的是它们在推荐队列中的位置。观察“行为→画像→推荐→再行为”的循环。"}
+                    : "其他内容并没有消失，真正改变的是它们在推荐队列中的位置。观察「行为→画像→推荐→再行为」的循环。"}
                 </p>
               </div>
             )}
