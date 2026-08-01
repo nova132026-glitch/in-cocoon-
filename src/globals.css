@@ -443,6 +443,7 @@ button {
 }
 
 .choice-grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 7px;
@@ -1732,6 +1733,7 @@ button {
 }
 
 .choice-grid.four-actions {
+  position: relative;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
@@ -2551,4 +2553,49 @@ button {
 @keyframes guide-in {
   from { opacity: 0; transform: translateY(6px); }
   to { opacity: 1; }
+}
+
+/* First-action coach arrow pointing to like button */
+.first-action-coach {
+  position: absolute;
+  z-index: 31;
+  right: -6px;
+  bottom: 10px;
+  transform: translateX(100%);
+  padding: 8px 14px 8px 22px;
+  border-radius: 10px;
+  background: #fef9e7;
+  color: #4a3f28;
+  border: 1px solid #f0d86e;
+  font-size: 17px;
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 6px 20px rgba(80, 60, 20, 0.18);
+  animation: coach-point 1.8s ease-in-out infinite;
+}
+
+.first-action-coach span {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #f0d86e;
+}
+
+/* Like button pulse glow */
+.first-action-highlight {
+  animation: first-action-pulse 1.5s ease-in-out infinite;
+  box-shadow: 0 0 0 4px rgba(244, 198, 93, 0.4), 0 8px 18px rgba(30, 70, 58, 0.1);
+  border-color: #f4c65d;
+}
+
+@keyframes coach-point {
+  0%, 100% { transform: translateX(100%) translateY(0); }
+  50% { transform: translateX(100%) translateY(-6px); }
+}
+
+@keyframes first-action-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(244, 198, 93, 0.4), 0 8px 18px rgba(30, 70, 58, 0.1); }
+  50% { box-shadow: 0 0 0 10px rgba(244, 198, 93, 0.15), 0 10px 22px rgba(30, 70, 58, 0.18); }
 }

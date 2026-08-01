@@ -190,6 +190,7 @@ export default function Home() {
   const pointerStart = useRef({ x: 0, time: 0 });
   const logId = useRef(0);
   const reflectionDone = useRef(false);
+  const firstLikePending = useRef(true);
   const [visibleGuides, setVisibleGuides] = useState<Set<number>>(new Set([1, 2, 3, 4, 5]));
 
   function hideGuide(n: number) {
@@ -372,8 +373,9 @@ export default function Home() {
     );
 
     let message = "";
-    if (kind === "like") {
-      message = `你点赞了“${current.title}”，系统把“${current.topic}”理解为明确兴趣。`;
+    if (kind === “like”) {
+      firstLikePending.current = false;
+      message = `你点赞了”${current.title}”，系统把”${current.topic}”理解为明确兴趣。`;
       setDropTheme(current.theme);
       window.setTimeout(() => setDropTheme(null), 900);
     } else if (kind === "stay") {
@@ -653,11 +655,20 @@ export default function Home() {
               <strong>继续观看</strong>
               <small>弱兴趣 +1</small>
             </button>
-            <button className="choice-button like" onClick={() => applySignal("like")}>
+            <button
+              className={`choice-button like ${firstLikePending.current ? "first-action-highlight" : ""}`}
+              onClick={() => applySignal("like")}
+            >
               <span>♥</span>
               <strong>喜欢</strong>
               <small>很感兴趣 +3</small>
             </button>
+            {firstLikePending.current && (
+              <div className="first-action-coach" role="status">
+                <span>↙</span>
+                试试看，点击"喜欢"
+              </div>
+            )}
           </div>
 
           {visibleGuides.has(2) && (
