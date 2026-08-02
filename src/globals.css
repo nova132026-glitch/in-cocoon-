@@ -168,8 +168,17 @@ button {
   padding: 18px;
 }
 
+.feed-panel {
+  position: relative;
+  z-index: 2;
+}
+
 .feed-panel .video-card {
   flex: 1;
+}
+
+.garden-panel {
+  position: relative;
 }
 
 .garden-panel .greenhouse {
@@ -2456,26 +2465,6 @@ button {
   }
 }
 
-/* Step guide bubbles */
-.step-guide {
-  position: absolute;
-  z-index: 30;
-  max-width: 260px;
-  padding: 12px 28px 12px 14px;
-  border-radius: 12px;
-  background: #fef9e7;
-  color: #4a3f28;
-  border: 1px solid #f0d86e;
-  box-shadow: 0 6px 20px rgba(80, 60, 20, 0.18);
-  animation: guide-in .35s ease;
-}
-
-.step-guide p {
-  font-size: 16px;
-  line-height: 1.55;
-  margin: 0;
-}
-
 .guide-close {
   position: absolute;
   top: 4px;
@@ -2498,63 +2487,6 @@ button {
   background: rgba(180, 140, 60, 0.2);
 }
 
-.guide-arrow {
-  position: absolute;
-  font-size: 18px;
-  color: #fef9e7;
-  line-height: 1;
-  filter: drop-shadow(0 -1px 0 #f0d86e);
-}
-
-.guide-below {
-  left: 12px;
-  right: 12px;
-  top: -8px;
-  transform: translateY(-100%);
-  max-width: 100%;
-}
-.guide-below .guide-arrow {
-  bottom: -14px;
-  left: 50%;
-  transform: translateX(-50%) rotate(180deg);
-}
-
-.guide-greenhouse {
-  top: 50px;
-  right: 10px;
-  max-width: 220px;
-}
-.guide-greenhouse .guide-arrow {
-  top: 10px;
-  right: -10px;
-}
-
-.guide-left {
-  top: 0;
-  right: -8px;
-  transform: translateX(100%);
-}
-.guide-left .guide-arrow {
-  top: 14px;
-  left: -12px;
-}
-
-.guide-tag-top {
-  top: 64px;
-  right: 10px;
-  max-width: 240px;
-}
-.guide-tag-top .guide-arrow {
-  top: -8px;
-  right: 24px;
-  font-size: 14px;
-}
-
-@keyframes guide-in {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; }
-}
-
 /* First-action coach arrow pointing to like button */
 .first-action-coach {
   position: absolute;
@@ -2571,7 +2503,7 @@ button {
   font-weight: 800;
   white-space: nowrap;
   box-shadow: 0 6px 20px rgba(80, 60, 20, 0.18);
-  animation: coach-point 1.8s ease-in-out infinite;
+  animation: coach-point 1.8s ease-in-out infinite, first-action-pulse 1.5s ease-in-out infinite;
 }
 
 .first-action-coach span {

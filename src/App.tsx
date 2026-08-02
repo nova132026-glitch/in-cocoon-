@@ -1,5 +1,5 @@
 
-import { PointerEvent, useMemo, useRef, useState } from "react";
+import { PointerEvent, useEffect, useMemo, useRef, useState } from "react";
 import contentCards from "./data/content_cards.json";
 
 type ThemeKey = "art" | "tech" | "sport" | "nature" | "history";
@@ -185,17 +185,20 @@ export default function Home() {
   const [hasIntervened, setHasIntervened] = useState(false);
   const [isBreaking, setIsBreaking] = useState(false);
   const [dragX, setDragX] = useState(0);
+  const [dragFast, setDragFast] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [isLeaving, setIsLeaving] = useState(false);
   const pointerStart = useRef({ x: 0, time: 0 });
   const logId = useRef(0);
   const reflectionDone = useRef(false);
   const firstLikePending = useRef(true);
-  const [visibleGuides, setVisibleGuides] = useState<Set<number>>(new Set([1, 2, 3, 4, 5]));
+  const [coachHidden, setCoachHidden] = useState(false);
 
-  function hideGuide(n: number) {
-    setVisibleGuides((prev) => { const next = new Set(prev); next.delete(n); return next; });
-  }
+  useEffect(() => {
+    if (!isBreaking) return;
+    const timer = setTimeout(() => setIsBreaking(false), 4000);
+    return () => clearTimeout(timer);
+  }, [isBreaking]);
   const current = contents[currentIndex];
 
   const total = Object.values(interests).reduce((sum, value) => sum + value, 0);
@@ -414,6 +417,8 @@ export default function Home() {
     if (!isDragging || isLeaving) return;
     const distance = event.clientX - pointerStart.current.x;
     setDragX(Math.max(-280, Math.min(110, distance)));
+    const dt = event.timeStamp - pointerStart.current.time;
+    if (dt > 0) setDragFast(Math.abs(distance) / dt > 0.046);
   }
 
   function animateAway(kind: "next" | "reject") {
@@ -433,10 +438,12 @@ export default function Home() {
     const elapsed = event.timeStamp - pointerStart.current.time;
     const distance = pointerStart.current.x - event.clientX;
     setIsDragging(false);
+    setDragFast(false);
     if (distance >= 46) {
       animateAway(elapsed <= 1000 ? "reject" : "next");
     } else {
       setDragX(0);
+      setDragFast(false);
     }
   }
 
@@ -444,6 +451,7 @@ export default function Home() {
     if (isLeaving) return;
     setIsDragging(false);
     setDragX(0);
+    setDragFast(false);
   }
 
   function explore() {
@@ -625,9 +633,19 @@ export default function Home() {
               className="swipe-feedback"
               style={{ opacity: Math.min(1, Math.max(0, -dragX - 18) / 90) }}
             >
-              <span>×</span>
-              <strong>不感兴趣</strong>
-              <small>快速划走会写入强负反馈</small>
+              {dragFast ? (
+                <>
+                  <span>×</span>
+                  <strong>不感兴趣</strong>
+                  <small>快速划走 −4</small>
+                </>
+              ) : (
+                <>
+                  <span>→</span>
+                  <strong>换下一条</strong>
+                  <small>慢速切换 −1</small>
+                </>
+              )}
             </div>
           </div>
 
@@ -656,41 +674,27 @@ export default function Home() {
               <small>弱兴趣 +1</small>
             </button>
             <button
-              className={`choice-button like ${firstLikePending.current ? "first-action-highlight" : ""}`}
+              className={`choice-button like ${firstLikePending.current && !coachHidden ? "first-action-highlight" : ""}`}
               onClick={() => applySignal("like")}
             >
               <span>♥</span>
               <strong>喜欢</strong>
               <small>很感兴趣 +3</small>
             </button>
-            {firstLikePending.current && (
+            {firstLikePending.current && !coachHidden && (
               <div className="first-action-coach" role="status">
+                <button className="guide-close" onClick={() => { setCoachHidden(true); firstLikePending.current = false; }}>×</button>
                 <span>↙</span>
                 试试看，点击"喜欢"
               </div>
             )}
           </div>
 
-          {visibleGuides.has(2) && (
-            <div className="step-guide guide-below">
-              <button className="guide-close" onClick={() => hideGuide(2)}>×</button>
-              <span className="guide-arrow">▼</span>
-              <p>你的每一次点击，都在教算法"我喜欢什么"。点喜欢就是大声说想要，划走就是小声说不感兴趣。</p>
-            </div>
-          )}
-
           <div className="tag-weight-card">
             <div className="tag-weight-title">
               <span>实验一｜预设内容标签</span>
               <small>这些内容会真的参与计算</small>
             </div>
-            {visibleGuides.has(1) && (
-              <div className="step-guide guide-tag-top">
-                <button className="guide-close" onClick={() => hideGuide(1)}>×</button>
-                <span className="guide-arrow">▲</span>
-                <p>标签就是算法给每条内容贴的"名片"。刷到一条视频前，它已经被分好类了。</p>
-              </div>
-            )}
             {currentTagWeights.map(({ tag, weight }) => (
               <div className="tag-weight-row" key={tag}>
                 <span>{tag}</span>
@@ -741,14 +745,6 @@ export default function Home() {
               <span>信息温室</span>
               <p>{stageCopy[cocoonLevel][1]}</p>
             </div>
-
-            {visibleGuides.has(3) && (
-              <div className="step-guide guide-greenhouse">
-                <button className="guide-close" onClick={() => hideGuide(3)}>×</button>
-                <span className="guide-arrow">◀</span>
-                <p>你喜欢的花会在你的点击影响下越来越大，其他的被挤到边上。玻璃墙一道一道围过来——这就是你的"信息茧房"。</p>
-              </div>
-            )}
 
             <div className="flower-bed">
               {themes.map((theme, index) => {
@@ -953,13 +949,6 @@ export default function Home() {
                 <small>直接修改你的喜好账本</small>
               </button>
             </div>
-            {visibleGuides.has(4) && (
-              <div className="step-guide guide-left">
-                <button className="guide-close" onClick={() => hideGuide(4)}>×</button>
-                <span className="guide-arrow">◀</span>
-                <p>点"探索新主题"，主动告诉算法"给我看看别的"。玻璃会裂开，更多类型的内容又回来了。</p>
-              </div>
-            )}
             {challengeComplete && (
               <button
                 className="reflection-trigger"
@@ -967,13 +956,6 @@ export default function Home() {
               >
                 回答反思题，完成实验 →
               </button>
-            )}
-            {visibleGuides.has(5) && (
-              <div className="step-guide guide-below">
-                <button className="guide-close" onClick={() => hideGuide(5)}>×</button>
-                <span className="guide-arrow">▼</span>
-                <p>怎么样？你发现了算法的秘密：它只给你看喜欢的，你就只点喜欢的，它就更只给你看那些。</p>
-              </div>
             )}
           </div>
 
@@ -1051,6 +1033,7 @@ export default function Home() {
             <div className="manage-list">
               {themes.map((theme) => {
                 const blocked = blockedThemes.includes(theme.key);
+                const lastUnblocked = !blocked && blockedThemes.length >= themes.length - 1;
                 return (
                   <div key={theme.key}>
                     <span style={{ background: theme.soft, color: theme.color }}>{theme.icon}</span>
@@ -1058,6 +1041,8 @@ export default function Home() {
                     <button
                       className={blocked ? "restore" : ""}
                       onClick={() => toggleBlock(theme.key)}
+                      disabled={lastUnblocked}
+                      title={lastUnblocked ? "至少保留一个主题，否则推荐列表为空" : undefined}
                     >
                       {blocked ? "恢复推荐" : "减少推荐"}
                     </button>
